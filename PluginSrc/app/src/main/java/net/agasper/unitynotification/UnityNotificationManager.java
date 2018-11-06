@@ -158,7 +158,7 @@ public class UnityNotificationManager extends BroadcastReceiver
         Resources res = context.getResources();
 
         Intent notificationIntent = context.getPackageManager().getLaunchIntentForPackage(bundle);
-
+        notificationIntent.putExtra("notificationId", id);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addNextIntent(notificationIntent);
 
