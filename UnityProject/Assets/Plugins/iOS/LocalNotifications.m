@@ -75,6 +75,9 @@ void scheduleNotification(struct NotificationStruct *notifStruct) {
     if (notifStruct->soundName) {
         notification.soundName = findSoundResourceForName([NSString stringWithUTF8String:notifStruct->soundName]);
     }
+    else{
+        notification.soundName = UILocalNotificationDefaultSoundName;
+    }
     notification.userInfo = @{@"identifier": [NSNumber numberWithInteger:notifStruct->identifier]};
     notification.category = [NSString stringWithUTF8String:notifStruct->category];
 
